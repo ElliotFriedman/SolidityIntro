@@ -3,8 +3,8 @@ solidity ^0.4.24;
 contract ERC20
 {
 	string public TokenName = "eCoin";
-	mapping (address => uint256) tokenOwner;
-	address creator;
+	mapping (address => uint256) public tokenOwner;
+	address public creator;
 	uint256 public token;
 	uint256 public avail;
 
