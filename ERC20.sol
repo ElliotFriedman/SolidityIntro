@@ -24,10 +24,13 @@ contract ERC20
 		_;
 	}
 
-	function withdrawEth(uint weiAmt) onlyOwner external payable
+	function withdrawAllEth() onlyOwner external payable
 	{
-		require(this.balance >= weiAmt);
-		msg.sender.transfer(weiAmt);
+		//cast current contract to an address
+		//then call the .balance method to return the contract balance
+		require(address(this).balance > 0);
+		//use .transfer so that we throw an error if we fail to send
+		msg.sender.transfer(address(this).balance);
 	}
 
 	//for external and non ICO transfers
@@ -45,7 +48,6 @@ contract ERC20
 		require(tokenOwner[sendfrom] >= amt);
 		tokenOwner[sendfrom] -= amt;
 		tokenOwner[sendto] += amt;
-		//check if avail is ruining it
 		avail -= amt;
 	}
 
