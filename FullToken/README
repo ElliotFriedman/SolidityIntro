@@ -1,0 +1,12 @@
+	Our ICO contract will use safemath, Safemath will
+be needed to prevent integer overflows and underflows.
+
+	Contract ERC20 will implement all function transfer
+logic.
+
+	Decimals have been set to 0 places as we do not want
+a token that is divisible.
+
+	Contract is deployed here https://rinkeby.etherscan.io/address/0x8cc8803c9562f1d3552a78f7697683a9f6d824c8#code
+Safemath library is deployed here https://rinkeby.etherscan.io/address/0xd39f2974c42738b6f1d38b6b6b2c52655a407d5e
+
